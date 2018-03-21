@@ -15,7 +15,7 @@ class EmbeddedPostgresGrailsPlugin extends Plugin {
     def scm             = [ url: "https://github.com/Relaximus/embedded-postgres-grails-plugin" ]
     def pluginExcludes  = []
     def developers      = [ [name: 'Alexey Chentsov'] ]
-    def dependsOn = [dataSource: '*']
+    def dependsOn = [datasource: '*']
 
     Closure doWithSpring() { {->
         def config = grailsApplication.config
