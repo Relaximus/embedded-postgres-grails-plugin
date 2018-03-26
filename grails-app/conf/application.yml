@@ -6,10 +6,3 @@ info:
         name: '@info.app.name@'
         version: '@info.app.version@'
         grailsVersion: '@info.app.grailsVersion@'
-
-#dataSource:
-#    embeddedPostgres: true
-#
-#dataSources:
-#    h2:
-#        url: jdbc:h2:mem:h2bd
