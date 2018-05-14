@@ -14,9 +14,9 @@ To get started with the minimum of configuration start from the following:
 Add to your ***build.gradle***
 ```groovy
 repositories {
-     maven {
-         url  "https://dl.bintray.com/relaximus/plugins" 
-      }
+    maven {
+        url  "https://dl.bintray.com/grails/plugins" 
+    }
 }
 ```
 ```groovy
