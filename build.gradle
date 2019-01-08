@@ -10,7 +10,7 @@ buildscript {
 }
 
 version "1.1.1"
-group "embedded.postgres"
+group "org.grails.plugins"
 
 apply plugin:"eclipse"
 apply plugin:"idea"
@@ -63,16 +63,4 @@ grailsPublish {
     title = "Ebedded Postgres Plugin"
     desc = "Plugin allows to use embedded postgres in application."
     developers = [relaximus:"Alexey Chentsov"]
-}
-
-bintray {
-    pkg {
-        name = "embedded-postgres"
-        issueTrackerUrl = "https://github.com/Relaximus/embedded-postgres-grails-plugin/issues"
-        vcsUrl = "https://github.com/Relaximus/embedded-postgres-grails-plugin"
-        version {
-            attributes = ['grails-plugin': "$project.group:embedded-postgres"]
-            name = project.version
-        }
-    }
 }
