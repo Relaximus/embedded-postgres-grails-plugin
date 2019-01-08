@@ -20,6 +20,8 @@ class EmbeddedPostgresGrailsPlugin extends Plugin {
     def pluginExcludes  = []
     def developers      = [ [name: 'Alexey Chentsov'] ]
     def dependsOn = [dataSource: grailsVersion]
+    def loadBefore = ['dataSource']
+    def scopes = [excludes:'war']
 
     Closure doWithSpring() { {->
         def config = grailsApplication.config
@@ -27,7 +29,6 @@ class EmbeddedPostgresGrailsPlugin extends Plugin {
             def dataSourceName = "dataSource"
             def opentableDb = startEmbeddedPostgres(config.dataSource, dataSourceName)
             embeddedPostgres(EmbeddedPostgresHolder,opentableDb)
-            getBeanDefinition(dataSourceName).setDependsOn('embeddedPostgres')
         }
         for(def entry: config.dataSources) {
             def dataSourceName = "dataSource_${entry.key}"
@@ -35,7 +36,6 @@ class EmbeddedPostgresGrailsPlugin extends Plugin {
             if (entry.value.embeddedPostgres) {
                 def opentableDb = startEmbeddedPostgres(entry.value, dataSourceName)
                 "$embeddedName"(EmbeddedPostgresHolder, opentableDb)
-                getBeanDefinition("dataSource").setDependsOn(embeddedName)
             }
         }
     } }
