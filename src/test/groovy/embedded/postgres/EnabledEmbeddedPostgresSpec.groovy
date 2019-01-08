@@ -3,7 +3,6 @@ package embedded.postgres
 import embedded.postgres.utils.DriverUtils
 import groovy.sql.Sql
 import org.grails.testing.GrailsUnitTest
-import org.postgresql.Driver
 import spock.lang.Specification
 
 class EnabledEmbeddedPostgresSpec extends Specification implements GrailsUnitTest {
