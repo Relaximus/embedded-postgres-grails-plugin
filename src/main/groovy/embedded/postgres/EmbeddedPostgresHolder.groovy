@@ -2,11 +2,10 @@ package embedded.postgres
 
 import com.opentable.db.postgres.embedded.EmbeddedPostgres
 import groovy.util.logging.Slf4j
-
-import javax.annotation.PreDestroy
+import org.springframework.beans.factory.DisposableBean
 
 @Slf4j
-class EmbeddedPostgresHolder {
+class EmbeddedPostgresHolder implements DisposableBean {
     private EmbeddedPostgres db
 
     EmbeddedPostgresHolder(EmbeddedPostgres db) {
@@ -17,8 +16,8 @@ class EmbeddedPostgresHolder {
         db.port
     }
 
-    @PreDestroy
-    def close() {
+    @Override
+    void destroy() throws Exception {
         log.warn "Stopping ${db.toString()}"
         db.close()
     }
