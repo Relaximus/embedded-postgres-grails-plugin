@@ -15,12 +15,12 @@ Add to your ***build.gradle***
 ```groovy
 repositories {
     maven {
-        url  "https://dl.bintray.com/grails/plugins" 
+        url  "https://dl.bintray.com/relaximus/plugins" 
     }
 }
 ```
 ```groovy
-compile 'embedded.postgres:embedded-postgres:1.0'
+compile 'org.grails.plugins:embedded-postgres:1.1.2'
 ```
 In your ***application.yml*** change the dataSource settings to the next one:
 ```yaml
