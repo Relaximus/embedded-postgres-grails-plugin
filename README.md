@@ -20,7 +20,7 @@ repositories {
 }
 ```
 ```groovy
-compile 'embedded.postgres:embedded-postgres:1.0'
+compile 'org.grails.plugins:embedded-postgres:1.1.2'
 ```
 In your ***application.yml*** change the dataSource settings to the next one:
 ```yaml
