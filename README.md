@@ -15,7 +15,7 @@ Add to your ***build.gradle***
 ```groovy
 repositories {
     maven {
-        url  "https://dl.bintray.com/grails/plugins" 
+        url  "https://dl.bintray.com/relaximus/plugins" 
     }
 }
 ```
